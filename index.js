@@ -6,7 +6,7 @@ const newTodoForm = document.querySelector('#new-todo-form');
 const todoList = document.querySelector('.todo-list');
 let todos = JSON.parse(localStorage.getItem('todos') || '[]');
 
-function init() {
+function start() {
   newTodoForm.addEventListener('submit', newTodo);
   updateList();
 }
@@ -67,7 +67,7 @@ const removeTodo = (targetIndex) => {
   updateList();
 };
 
-init();
+start();
 
 document.querySelector('.clearComplete').addEventListener('click').removeCompletedTodos();
 const changeTodoStatus = ({ index, status }) => {
